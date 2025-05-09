@@ -6,7 +6,6 @@ services:
     depends_on:
       - swetrix-api
     environment:
-      - SERVICE_FQDN_FE_3000
       - API_URL=${API_URL}
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/ping || exit 1"]
@@ -19,7 +18,6 @@ services:
     restart: always
     container_name: swetrix-api
     environment:
-      - SERVICE_FQDN_API_5005
       # Configurable with .env file
       - JWT_ACCESS_TOKEN_SECRET=${JWT_ACCESS_TOKEN_SECRET}
       - JWT_REFRESH_TOKEN_SECRET=${JWT_REFRESH_TOKEN_SECRET}
