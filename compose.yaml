@@ -6,7 +6,7 @@ services:
     depends_on:
       - swetrix-api
     environment:
-      - SERVICE_FQDN_FE_80
+      - SERVICE_FQDN_FE_3000
       - API_URL=${API_URL}
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/ping || exit 1"]
